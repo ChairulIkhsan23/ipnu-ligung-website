@@ -40,102 +40,57 @@ class BlogPostSeeder extends Seeder
             [
                 'title' => 'Pelantikan Pengurus MWC NU Periode 2024-2029',
                 'slug' => 'pelantikan-pengurus-mwc-nu-2024-2029',
-                'excerpt' => 'MWC NU Ligung resmi melantik pengurus baru untuk periode 2024-2029 dalam acara yang dihadiri oleh berbagai elemen masyarakat.',
+                'excerpt' => 'MWC NU Ligung resmi melantik pengurus baru...',
                 'content' => $this->generateContent('Pelantikan Pengurus'),
                 'category_id' => $categories->where('slug', 'berita')->first()->id,
                 'status' => 'published',
                 'published_at' => now()->subDays(5),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
+                'author_id' => $editor->id,
+                'views' => rand(450, 900),
             ],
             [
                 'title' => 'Pentingnya Pendidikan Karakter dalam Islam',
                 'slug' => 'pentingnya-pendidikan-karakter-dalam-islam',
-                'excerpt' => 'Artikel ini membahas tentang bagaimana pendidikan karakter menjadi fondasi penting dalam ajaran Islam.',
+                'excerpt' => 'Artikel ini membahas tentang pendidikan karakter...',
                 'content' => $this->generateContent('Pendidikan Karakter'),
                 'category_id' => $categories->where('slug', 'artikel')->first()->id,
                 'status' => 'published',
                 'published_at' => now()->subDays(10),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
+                'author_id' => $editor->id,
+                'views' => rand(700, 1200),
             ],
             [
                 'title' => 'Jadwal Kajian Rutin Bulan Desember 2024',
                 'slug' => 'jadwal-kajian-rutin-desember-2024',
-                'excerpt' => 'Berikut adalah jadwal kajian rutin yang akan dilaksanakan selama bulan Desember 2024.',
+                'excerpt' => 'Berikut jadwal kajian rutin...',
                 'content' => $this->generateContent('Jadwal Kajian'),
                 'category_id' => $categories->where('slug', 'pengumuman')->first()->id,
                 'status' => 'published',
                 'published_at' => now()->subDays(2),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
+                'author_id' => $editor->id,
+                'views' => rand(300, 600),
             ],
             [
                 'title' => 'Laporan Kegiatan Bakti Sosial di Desa Ligung',
                 'slug' => 'laporan-kegiatan-bakti-sosial-desa-ligung',
-                'excerpt' => 'MWC NU Ligung sukses menggelar kegiatan bakti sosial yang diikuti oleh puluhan relawan.',
+                'excerpt' => 'MWC NU Ligung sukses menggelar kegiatan...',
                 'content' => $this->generateContent('Bakti Sosial'),
                 'category_id' => $categories->where('slug', 'kegiatan')->first()->id,
                 'status' => 'published',
                 'published_at' => now()->subDays(7),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
+                'author_id' => $editor->id,
+                'views' => rand(500, 1000),
             ],
             [
                 'title' => 'Memahami Makna Ikhlas dalam Beramal',
                 'slug' => 'memahami-makna-ikhlas-dalam-beramal',
-                'excerpt' => 'Konsep ikhlas seringkali disalahpahami. Artikel ini mengupas makna sebenarnya dari ikhlas.',
+                'excerpt' => 'Konsep ikhlas seringkali disalahpahami...',
                 'content' => $this->generateContent('Makna Ikhlas'),
                 'category_id' => $categories->where('slug', 'edukasi')->first()->id,
                 'status' => 'published',
                 'published_at' => now()->subDays(15),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
-            ],
-            [
-                'title' => 'Kisah Inspiratif dari Seorang Pengurus NU',
-                'slug' => 'kisah-inspiratif-pengurus-nu',
-                'excerpt' => 'Perjalanan hidup seorang pengurus NU yang penuh perjuangan dan keteladanan.',
-                'content' => $this->generateContent('Kisah Inspiratif'),
-                'category_id' => $categories->where('slug', 'inspirasi')->first()->id,
-                'status' => 'published',
-                'published_at' => now()->subDays(3),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
-            ],
-            [
-                'title' => 'Workshop Digitalisasi Administrasi NU',
-                'slug' => 'workshop-digitalisasi-administrasi-nu',
-                'excerpt' => 'Workshop untuk meningkatkan kemampuan pengurus dalam mengelola administrasi secara digital.',
-                'content' => $this->generateContent('Workshop Digital'),
-                'category_id' => $categories->where('slug', 'kegiatan')->first()->id,
-                'status' => 'published',
-                'published_at' => now()->subDays(1),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
-            ],
-            [
-                'title' => 'Peran Pemuda NU di Era Digital',
-                'slug' => 'peran-pemuda-nu-era-digital',
-                'excerpt' => 'Bagaimana pemuda NU dapat berkontribusi lebih besar di era digital saat ini.',
-                'content' => $this->generateContent('Pemuda NU'),
-                'category_id' => $categories->where('slug', 'artikel')->first()->id,
-                'status' => 'draft',
-                'published_at' => now()->addDays(5),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
-            ],
-            [
-                'title' => 'Silaturahmi dengan Ormas Lain se-Kecamatan Ligung',
-                'slug' => 'silaturahmi-ormas-lain-kecamatan-ligung',
-                'excerpt' => 'MWC NU Ligung mengadakan silaturahmi dengan berbagai ormas untuk mempererat ukhuwah.',
-                'content' => $this->generateContent('Silaturahmi'),
-                'category_id' => $categories->where('slug', 'kegiatan')->first()->id,
-                'status' => 'published',
-                'published_at' => now()->subDays(20),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
-            ],
-            [
-                'title' => 'Tata Cara Shalat Berjamaah yang Benar',
-                'slug' => 'tata-cara-shalat-berjamaah-yang-benar',
-                'excerpt' => 'Panduan lengkap tentang tata cara melaksanakan shalat berjamaah sesuai sunnah.',
-                'content' => $this->generateContent('Shalat Berjamaah'),
-                'category_id' => $categories->where('slug', 'edukasi')->first()->id,
-                'status' => 'published',
-                'published_at' => now()->subDays(25),
-                'author_id' => $editor->id, // Gunakan editor sebagai author
+                'author_id' => $editor->id,
+                'views' => rand(800, 1500),
             ],
         ];
 
