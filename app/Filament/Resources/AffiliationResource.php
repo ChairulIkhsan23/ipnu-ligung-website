@@ -116,7 +116,6 @@ class AffiliationResource extends Resource
                     ->limit(50)
                     ->searchable()
                     ->wrap()
-                    ->toggleable()
                     ->color('gray'),
 
                 BadgeColumn::make('legal_document')
@@ -147,7 +146,6 @@ class AffiliationResource extends Resource
                     ->limit(25)
                     ->copyable()
                     ->copyMessage('URL disalin')
-                    ->toggleable()
                     ->color('primary'),
 
                 TextColumn::make('created_at')
