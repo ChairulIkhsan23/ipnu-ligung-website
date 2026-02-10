@@ -13,7 +13,6 @@ class TopKategoriBlogPostWidget extends BaseWidget
         // Hitung statistik dasar
         $totalCategories = Category::count();
         $categoriesWithPosts = Category::has('posts')->count();
-        $categoriesWithoutPosts = Category::doesntHave('posts')->count();
         
         // Kategori dengan artikel terbanyak
         $topCategory = Category::withCount('posts')
