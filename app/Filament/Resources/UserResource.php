@@ -94,6 +94,7 @@ class UserResource extends Resource
                             ->dehydrated(fn ($state) => filled($state))
                             ->maxLength(255)
                             ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                            ->prefixIcon('heroicon-o-key')
                             ->rules([
                                 'min:8',
                             ])
@@ -115,7 +116,8 @@ class UserResource extends Resource
                                 'same' => 'Konfirmasi kata sandi harus sama dengan kata sandi.',
                                 'required' => 'Konfirmasi kata sandi wajib diisi.',
                             ])
-                            ->dehydrated(false),
+                            ->dehydrated(false)
+                            ->prefixIcon('heroicon-o-key'),
 
                         DateTimePicker::make('email_verified_at')
                             ->label('Email Terverifikasi Pada')
