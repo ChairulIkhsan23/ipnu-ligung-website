@@ -41,4 +41,15 @@ class EditBlogPost extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    /**
+     * Simulasi Hitung View Artikel Ketika Admin Klik Artikel nya
+    */
+    public function mount($record): void
+    {
+        parent::mount($record);
+
+        // HITUNG VIEW SEMENTARA DARI ADMIN
+        $this->record->incrementViews();
+    }
 }
