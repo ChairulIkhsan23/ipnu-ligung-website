@@ -89,4 +89,24 @@ class BlogPost extends Model
             ->where('created_at', '>', now()->subHour())
             ->count();
     }
+
+    public function incrementViews(): void
+    {
+        $now = now();
+
+        $this->increment('views');
+        $this->increment('views_today');
+        $this->increment('views_this_week');
+        $this->increment('views_this_month');
+
+        // hitung view velocity (views per hour)
+        $lastViewed = $this->last_viewed_at ?? $now->subHour();
+        $hours = max($lastViewed->diffInMinutes($now) / 60, 0.01);
+
+        $this->update([
+            'view_velocity' => round(1 / $hours, 2),
+            'last_viewed_at' => $now,
+        ]);
+    }
+
 }
