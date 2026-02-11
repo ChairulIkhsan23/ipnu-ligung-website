@@ -26,8 +26,7 @@ return new class extends Migration
             $table->date('end_date')->nullable();
             $table->string('visibility')->default('public');
             $table->boolean('is_featured')->default(false);
-            $table->json('timeline')->nullable();
-            $table->json('documentation')->nullable();
+            $table->string('documentation')->nullable();
             $table->string('person_in_charge')->nullable();
             $table->timestamps();
             
