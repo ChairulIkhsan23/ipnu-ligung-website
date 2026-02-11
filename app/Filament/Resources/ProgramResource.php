@@ -12,6 +12,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -111,16 +112,20 @@ class ProgramResource extends Resource
                             ->maxSize(2048)
                             ->helperText('Rasio 16:9, ukuran optimal 1200x675px')
                             ->columnSpan(1),
-
-                        FileUpload::make('documentation')
-                            ->label('Dokumentasi')
-                            ->image()
-                            ->directory('program/documentations')
-                            ->multiple()
-                            ->maxFiles(10)
-                            ->maxSize(5120)
-                            ->helperText('Foto dokumentasi kegiatan (maks 10 file)')
-                            ->columnSpanFull(),
+                        
+                        Section::make('Dokumentasi')
+                            ->description('Catatan: Dokumentasi ditambahkan ketika Program sudah selesai')
+                            ->schema([
+                                TextInput::make('documentation')
+                                    ->label('Link Dokumentasi (Google Drive)')
+                                    ->url()
+                                    ->placeholder('https://drive.google.com/drive/folders/...')
+                                    ->helperText('Link folder Google Drive berisi dokumentasi program')
+                                    ->columnSpanFull()
+                                    ->maxLength(500),
+                            ])
+                            ->collapsible()
+                            ->collapsed(),
                     ])
                     ->columns(2),
 
